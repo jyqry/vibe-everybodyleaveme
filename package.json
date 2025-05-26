@@ -1,0 +1,24 @@
+{
+  "name": "everybodyleaveme",
+  "version": "1.0.0",
+  "description": "YouTube에서 댓글과 라이브 채팅을 숨겨 집중할 수 있는 Chrome 확장 프로그램",
+  "private": true,
+  "main": "manifest.json",
+  "scripts": {
+    "extension:build": "echo 'Chrome 확장 프로그램이 준비되었습니다. chrome://extensions/에서 로드하세요.'",
+    "extension:zip": "zip -r everybodyleaveme.zip manifest.json popup.html popup.js content.js content.css background.js icons/ README.md INSTALL_GUIDE.md"
+  },
+  "keywords": [
+    "chrome-extension",
+    "youtube",
+    "focus",
+    "productivity",
+    "clean-interface",
+    "browser-extension"
+  ],
+  "author": "EverybodyLeaveMe Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/chrome": "^0.0.268"
+  }
+}

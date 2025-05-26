@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>간단한 아이콘 생성기</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      .icon {
+        display: inline-block;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid #ccc;
+      }
+      canvas {
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🎯 EverybodyLeaveMe 아이콘</h1>
+    <p>각 아이콘을 우클릭하여 "이미지를 다른 이름으로 저장"을 선택하세요.</p>
+
+    <div class="icon">
+      <h3>16x16</h3>
+      <canvas id="icon16" width="16" height="16"></canvas>
+    </div>
+
+    <div class="icon">
+      <h3>48x48</h3>
+      <canvas id="icon48" width="48" height="48"></canvas>
+    </div>
+
+    <div class="icon">
+      <h3>128x128</h3>
+      <canvas id="icon128" width="128" height="128"></canvas>
+    </div>
+
+    <script>
+      function createSimpleIcon(canvasId, size) {
+        const canvas = document.getElementById(canvasId);
+        const ctx = canvas.getContext("2d");
+
+        // 빨간 배경
+        ctx.fillStyle = "#ff4444";
+        ctx.fillRect(0, 0, size, size);
+
+        // 흰색 X 표시
+        ctx.strokeStyle = "white";
+        ctx.lineWidth = Math.max(1, size / 8);
+        ctx.lineCap = "round";
+
+        const margin = size * 0.2;
+        ctx.beginPath();
+        ctx.moveTo(margin, margin);
+        ctx.lineTo(size - margin, size - margin);
+        ctx.moveTo(size - margin, margin);
+        ctx.lineTo(margin, size - margin);
+        ctx.stroke();
+      }
+
+      // 아이콘 생성
+      createSimpleIcon("icon16", 16);
+      createSimpleIcon("icon48", 48);
+      createSimpleIcon("icon128", 128);
+
+      // 다운로드 기능 추가
+      document.querySelectorAll("canvas").forEach((canvas) => {
+        canvas.addEventListener("contextmenu", function (e) {
+          // 우클릭 메뉴는 브라우저가 처리
+        });
+
+        canvas.addEventListener("click", function () {
+          const link = document.createElement("a");
+          link.download = canvas.id + ".png";
+          link.href = canvas.toDataURL();
+          link.click();
+        });
+      });
+    </script>
+  </body>
+</html>

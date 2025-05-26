@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "EverybodyLeaveMe",
+  "version": "1.0",
+  "description": "YouTube에서 댓글과 라이브 채팅을 숨겨 집중할 수 있는 확장 프로그램",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["*://www.youtube.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "EverybodyLeaveMe"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

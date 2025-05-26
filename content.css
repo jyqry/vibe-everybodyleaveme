@@ -1,0 +1,147 @@
+/* EverybodyLeaveMe - Content Styles */
+
+/* 댓글 섹션 숨기기 */
+[data-comment-hidden="true"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 라이브 채팅 숨기기 */
+[data-chat-hidden="true"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 채팅 버튼 숨기기 */
+[data-chat-button-hidden="true"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* 추가적인 댓글 관련 요소들 강제 숨기기 */
+.youtube-comment-remover-hide-comments #comments,
+.youtube-comment-remover-hide-comments #comment-section,
+.youtube-comment-remover-hide-comments ytd-comments,
+.youtube-comment-remover-hide-comments ytd-comments-header-renderer,
+.youtube-comment-remover-hide-comments ytd-comment-thread-renderer,
+.youtube-comment-remover-hide-comments
+  ytd-comments-entry-point-header-renderer {
+  display: none !important;
+}
+
+/* 추가적인 라이브 채팅 관련 요소들 강제 숨기기 */
+.youtube-comment-remover-hide-chat #chat,
+.youtube-comment-remover-hide-chat #chat-container,
+.youtube-comment-remover-hide-chat ytd-live-chat-frame,
+.youtube-comment-remover-hide-chat yt-live-chat-app,
+.youtube-comment-remover-hide-chat iframe[src*="live_chat"],
+.youtube-comment-remover-hide-chat
+  ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-live-chat"] {
+  display: none !important;
+}
+
+/* 부드러운 전환 효과 */
+#comments,
+#chat,
+ytd-comments,
+ytd-live-chat-frame {
+  transition: opacity 0.3s ease, height 0.3s ease;
+}
+
+/* 댓글이 제거되었을 때 여백 조정 */
+.youtube-comment-remover-hide-comments #primary {
+  margin-bottom: 0 !important;
+}
+
+/* 채팅이 제거되었을 때 여백 조정 */
+.youtube-comment-remover-hide-chat #panels {
+  display: none !important;
+}
+
+/* 영화관 모드에서 라이브 채팅 완전 제거 */
+ytd-watch-flexy[theater] #secondary,
+ytd-watch-flexy[theater] #chat,
+ytd-watch-flexy[theater] ytd-live-chat-frame,
+ytd-watch-flexy[theater] #secondary-inner,
+ytd-watch-flexy[theater] #panels-full-bleed-container {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 라이브 채팅 제거 시 전체 스타일 조정 (기본 모드에서는 secondary 제외) */
+.youtube-comment-remover-no-chat #chat,
+.youtube-comment-remover-no-chat ytd-live-chat-frame,
+.youtube-comment-remover-no-chat #chatframe,
+.youtube-comment-remover-no-chat .live-chat-iframe,
+.youtube-comment-remover-no-chat yt-live-chat-renderer,
+.youtube-comment-remover-no-chat #panels-full-bleed-container,
+.youtube-comment-remover-no-chat #secondary ytd-live-chat-frame,
+.youtube-comment-remover-no-chat #secondary #chat {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 기본 모드에서 secondary 영역 내 라이브 채팅만 제거 */
+.youtube-comment-remover-no-chat:not([theater]) #secondary ytd-live-chat-frame,
+.youtube-comment-remover-no-chat:not([theater]) #secondary #chat,
+.youtube-comment-remover-no-chat:not([theater]) #secondary .live-chat-iframe {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 영화관 모드에서만 secondary 영역 제거 */
+.youtube-comment-remover-no-chat ytd-watch-flexy[theater] #secondary {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+}
+
+/* 영화관 모드에서 메인 콘텐츠 영역 확장 */
+.youtube-comment-remover-no-chat ytd-watch-flexy[theater] #primary {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* 라이브 채팅 버튼들 숨기기 */
+.youtube-comment-remover-no-chat .ytp-live-chat-button,
+.youtube-comment-remover-no-chat .ytp-button[data-tooltip-target-id*="chat"],
+.youtube-comment-remover-no-chat
+  button[data-target-id="engagement-panel-live-chat"] {
+  display: none !important;
+}
+
+/* 전체 너비 패널 컨테이너 강제 제거 */
+#panels-full-bleed-container.style-scope.ytd-watch-flexy,
+.panels-full-bleed-container,
+div[id="panels-full-bleed-container"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
